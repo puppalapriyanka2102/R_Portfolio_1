@@ -1,8 +1,15 @@
 ---
 title: "Prediction using Supervised ML"
 author: "Priyanka Puppala"
-output: pdf_document
-
+output: github_document
+# #   pdf_document: default
+# #   html_document: default
+# # always_allow_html: yes
+# knit: (function("C:/rstat_ana/R_Portpolio_1/project.rmd", encoding) {
+#   out_dir <- 'docs';
+#   rmarkdown::render("C:/rstat_ana/R_Portpolio_1/project.rmd",
+#  encoding=encoding,
+#  output_file=file.path(dirname("C:/rstat_ana/R_Portpolio_1/project.rmd"), out_dir, 'index.html'))})
 --- 
 ### Data Science & Business Analytics Tasks
 ### Prediction using Supervised ML
@@ -86,12 +93,12 @@ plot_missing(train)
 ```
 # Exploratory Data Analysis (EDA)
 * describe - can computes the statistics of all numerical variables 
-```{r, warning=FALSE, message=FALSE}
-library(Hmisc)
-describe(train)
-describe(test)
-
-```
+# ```{r, warning=FALSE, message=FALSE}
+# library(Hmisc)
+# describe(train)
+# describe(test)
+# 
+# ```
 * Two continuous variables
 ```{r, fig.width=8, fig.height=5}
 library(ggplot2)
@@ -213,7 +220,7 @@ coef(model)[1] + 9.25*coef(model)[2] #Mathematical form
 ```
 
 ```{r , include = FALSE, warning=FALSE, message=FALSE}
-library(tidyverse)
+
 train_pred_new <-  train_pred %>% add_row(Hours=9.25, Scores= pred_hour,
                                           pred =pred_hour)
 train_pred_new
